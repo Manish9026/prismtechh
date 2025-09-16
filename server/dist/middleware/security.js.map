@@ -1,0 +1,1 @@
+{"version":3,"file":"security.js","sourceRoot":"","sources":["../../src/middleware/security.ts"],"names":[],"mappings":";;;;;;AACA,kDAA0B;AAEnB,MAAM,uBAAuB,GAAG,CAAC,GAAY,EAAQ,EAAE;IAC5D,oGAAoG;IACpG,MAAM,cAAc,GAAmB,IAAA,eAAK,EAAC,EAAE,MAAM,EAAE,IAAI,EAAE,CAAC,CAAC;IAC/D,gFAAgF;IAChF,GAAG,CAAC,GAAG,CAAC,gBAAgB,EAAE,cAAc,CAAC,CAAC;AAC5C,CAAC,CAAC;AALW,QAAA,uBAAuB,2BAKlC"}
