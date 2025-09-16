@@ -1,4 +1,5 @@
-import { ReactNode, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
+import type { ReactNode } from 'react'
 
 export default function Section({ id, title, subtitle, children, className = '' }: { id?: string, title?: string, subtitle?: string, children: ReactNode, className?: string }) {
   const ref = useRef<HTMLElement | null>(null)

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import NeonCard from '@/components/NeonCard'
 import Section from '@/components/Section'
 import { motion } from 'framer-motion'

@@ -107,7 +107,7 @@ export default function About() {
             <div className="absolute inset-x-[-6px] top-0 h-3 bg-prism-gradient blur-sm opacity-70" />
           </div>
           <ul className="space-y-8">
-            {[].map((e: any, idx: number) => (
+            {[].map((_: any, idx: number) => (
               <li key={idx} className="relative">
                 <motion.span
                   initial={{ scale: 0, opacity: 0 }}

@@ -96,9 +96,9 @@ export default function Pricing() {
                 </div>
               )}
 
+              <div className={tier.popular ? 'rounded-xl border-2' : ''} style={tier.popular ? { borderColor: tier.color || '#8b5cf6' } : {}}>
               <NeonCard 
-                className={`h-full ${tier.popular ? 'border-2' : ''}`}
-                style={tier.popular ? { borderColor: tier.color || '#8b5cf6' } : {}}
+                className={`h-full`}
               >
                 <div className="p-6 h-full flex flex-col">
                   {/* Header */}
@@ -225,6 +225,7 @@ export default function Pricing() {
                   </div>
                 </div>
               </NeonCard>
+              </div>
             </motion.div>
           ))}
         </div>

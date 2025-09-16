@@ -31,10 +31,10 @@ type PricingTier = {
 
 const CURRENCIES = ['USD', 'EUR', 'GBP', 'INR', 'CAD', 'AUD']
 const BILLING_PERIODS = ['monthly', 'yearly', 'one-time', 'custom']
-const COLORS = [
-  '#8b5cf6', '#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#ec4899',
-  '#06b6d4', '#84cc16', '#f97316', '#6366f1', '#14b8a6', '#a855f7'
-]
+// const COLORS = [
+//   '#8b5cf6', '#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#ec4899',
+//   '#06b6d4', '#84cc16', '#f97316', '#6366f1', '#14b8a6', '#a855f7'
+// ]
 const ICONS = ['💼', '🚀', '⭐', '💎', '🔥', '🎯', '⚡', '🌟', '💫', '🎨', '🛡️', '🔧']
 
 export default function PricingManager() {
@@ -92,7 +92,7 @@ export default function PricingManager() {
         setError('Name must be at least 2 characters')
         return
       }
-      if (form.price < 0) {
+      if ((form.billingPeriod !== 'custom') && ((form.price ?? 0) < 0)) {
         setError('Price must be non-negative')
         return
       }
@@ -624,7 +624,7 @@ export default function PricingManager() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {items.map((tier, idx) => (
+            {items.map((tier) => (
               <div key={tier._id} className="glass-dark rounded-xl p-4 card-hover">
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">

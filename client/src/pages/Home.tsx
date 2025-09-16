@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useState } from 'react'
 import HoloButton from '@/components/HoloButton'
 import Particles from '@/components/Particles'
 import Section from '@/components/Section'
@@ -236,82 +236,6 @@ export default function Home() {
   )
 }
 
-function ProjectsSection() {
-  const [filter, setFilter] = useState<'All' | 'Web App' | 'CMS' | 'Cybersecurity' | 'Cloud'>('All')
-  const projects = useMemo(() => Array.from({ length: 9 }).map((_, i) => ({
-    title: `Project ${i + 1}`,
-    desc: 'High-performance web app with neon UI and secure backend.',
-    category: (['Web App', 'Cloud', 'CMS', 'Cybersecurity'] as const)[i % 4],
-  })), [])
-  const shown = projects.filter(p => filter === 'All' ? true : p.category === filter)
-
-  return (
-    <Section id="projects" title="Our Work">
-      <div className="flex flex-wrap items-center gap-3 mb-6">
-        {(['All','Web App','CMS','Cybersecurity','Cloud'] as const).map(c => (
-          <button key={c} onClick={() => setFilter(c)} className={`px-3 py-1.5 rounded-md text-sm ${filter===c? 'bg-prism-gradient text-black shadow-neon' : 'glass text-white/80 hover:text-white'}`}>{c}</button>
-        ))}
-      </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {shown.map(p => (
-          <NeonCard key={p.title}>
-            <div className="p-4 group">
-              <div className="aspect-video rounded-lg bg-prism-gradient mb-3 group-hover:shadow-neon transition" />
-              <div className="flex items-center justify-between">
-                <h3 className="text-lg font-semibold">{p.title}</h3>
-                <span className="text-xs text-white/60">{p.category}</span>
-              </div>
-              <p className="text-white/70 text-sm mt-1">{p.desc}</p>
-            </div>
-          </NeonCard>
-        ))}
-      </div>
-    </Section>
-  )
-}
-
-function PricingSection() {
-  const tiers = [
-    { name: 'Starter', price: 999, features: ['One-page site', 'Basic SEO', '1 revision'] },
-    { name: 'Professional', price: 2999, features: ['5 pages', 'Animations', 'Contact form', 'SEO'], popular: true },
-    { name: 'Enterprise', price: 6999, features: ['Custom design', 'Integrations', 'Analytics', 'Priority support'] },
-  ]
-  return (
-    <Section id="pricing" title="Choose Your Plan">
-      <div className="grid md:grid-cols-3 gap-6">
-        {tiers.map(t => (
-          <div key={t.name} className={t.popular ? 'relative' : ''}>
-            {t.popular && <div className="absolute -inset-[2px] rounded-2xl bg-prism-gradient opacity-70 blur-xl" />}
-            <NeonCard className={t.popular ? 'relative' : ''}>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold">{t.name}</h3>
-                <AnimatedPrice value={t.price} />
-                <ul className="mt-4 space-y-2 text-white/80 text-sm">
-                  {t.features.map(f => <li key={f}>✓ {f}</li>)}
-                </ul>
-                <HoloButton className="mt-6 w-full">Get Started</HoloButton>
-              </div>
-            </NeonCard>
-          </div>
-        ))}
-      </div>
-    </Section>
-  )
-}
-
-function AnimatedPrice({ value }: { value: number }) {
-  const [display, setDisplay] = useState(0)
-  useState(() => {
-    const start = performance.now()
-    const duration = 900
-    const step = (t: number) => {
-      const p = Math.min(1, (t - start) / duration)
-      setDisplay(Math.floor(value * p))
-      if (p < 1) requestAnimationFrame(step)
-    }
-    requestAnimationFrame(step)
-  })
-  return <div className="text-3xl font-orbitron mt-2">${display}</div>
-}
+//
 
 

@@ -15,7 +15,7 @@ export default function ServicesManager() {
 
   const [form, setForm] = useState<Partial<Service>>({ title: '', description: '', icon: '', featured: false, order: 0 })
   const [editingId, setEditingId] = useState<string | null>(null)
-  const [selectedItems, setSelectedItems] = useState<string[]>([])
+  // const [selectedItems, setSelectedItems] = useState<string[]>([])
   const [filter, setFilter] = useState<'All' | 'Featured' | 'Not Featured'>('All')
 
   async function load() {

@@ -17,7 +17,7 @@ import AdminLayout from './admin/AdminLayout'
 import Login from './admin/Login'
 import RequireAuth from './admin/RequireAuth'
 import { useEffect } from 'react'
-import LogoLoader from './components/LogoLoader'
+// import LogoLoader from './components/LogoLoader'
 
 const HomeManager = lazy(()=>import('./admin/HomeManager'))
 const Dashboard = lazy(()=>import('./admin/Dashboard'))

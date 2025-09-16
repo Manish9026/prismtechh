@@ -1,4 +1,5 @@
-import { ReactNode, useMemo } from 'react'
+import { useMemo } from 'react'
+import type { ReactNode } from 'react'
 
 type Tone = 'violet' | 'cyan' | 'emerald' | 'amber' | 'fuchsia' | 'prism'
 
