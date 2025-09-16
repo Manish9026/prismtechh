@@ -10,16 +10,16 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     }
   },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://prismtech-1.onrender.com',
-        changeOrigin: true,
-      },
-      '/uploads': {
-        target: 'https://prismtech-1.onrender.com',
-        changeOrigin: true,
-      },
-    }
-  }
+  // server: {
+  //   proxy: {
+  //     '/api': {
+  //       target: 'https://prismtech-1.onrender.com',
+  //       changeOrigin: true,
+  //     },
+  //     '/uploads': {
+  //       target: 'https://prismtech-1.onrender.com',
+  //       changeOrigin: true,
+  //     },
+  //   }
+  // }
 })

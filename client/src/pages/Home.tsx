@@ -5,6 +5,7 @@ import Particles from '@/components/Particles'
 import Section from '@/components/Section'
 import NeonCard from '@/components/NeonCard'
 import Testimonials from '@/components/Testimonials'
+import { url } from '@/utils/url'
 
 type Project = {
   _id: string
@@ -28,7 +29,6 @@ type Service = {
 }
 
 
-const url="https://prismtech-1.onrender.com";
 export default function Home() {
   const [headline, setHeadline] = useState<string>('')
   const [tagline, setTagline] = useState<string>('')

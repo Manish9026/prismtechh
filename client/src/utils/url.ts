@@ -1,1 +1,1 @@
-export const url:string="https://prismtech-1.onrender.com"
+export const url:string="https://prismtechh.onrender.com"
