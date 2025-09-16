@@ -21,12 +21,13 @@ export default function App() {
       <div id="sweep" className="sweep-overlay" />
       <Navbar />
       {(navigation.state === 'loading' || overlay) && (
-        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/60">
+        <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/60 w-screen h-full">
           <LogoLoader />
         </div>
       )}
       <Suspense fallback={<LogoLoader />}>
         <Outlet />
+
       </Suspense>
       <Footer />
     </div>

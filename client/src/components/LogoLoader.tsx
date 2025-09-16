@@ -12,7 +12,7 @@ export default function LogoLoader(){
   })() }, [])
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-3 bg-black/60">
+    <div className="min-h-screen flex flex-col items-center justify-center gap-3 bg-black/60 w-screen h-full">
       <div className="relative">
         <div className="absolute inset-0 rounded-full blur-xl" style={{ background:'linear-gradient(135deg,var(--royal-purple),var(--prism-blue))', opacity:.25 }} />
         {logo ? (
