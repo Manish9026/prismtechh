@@ -28,6 +28,12 @@ const SettingsSchema = new mongoose_1.Schema({
         values: [String],
     },
     testimonials: [{ name: String, role: String, quote: String, photo: String }],
+    contact: {
+        email: String,
+        phone: String,
+        address: String,
+        mapEmbedUrl: String,
+    },
 }, { timestamps: true });
 exports.Settings = (0, mongoose_1.model)('Settings', SettingsSchema);
 //# sourceMappingURL=Settings.js.map

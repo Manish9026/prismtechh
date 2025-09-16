@@ -33,6 +33,12 @@ export interface ISettings extends Document {
         quote: string;
         photo?: string;
     }[];
+    contact?: {
+        email?: string;
+        phone?: string;
+        address?: string;
+        mapEmbedUrl?: string;
+    };
 }
 export declare const Settings: import("mongoose").Model<ISettings, {}, {}, {}, Document<unknown, {}, ISettings, {}, {}> & ISettings & Required<{
     _id: unknown;
