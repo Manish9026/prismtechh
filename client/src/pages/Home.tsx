@@ -27,6 +27,8 @@ type Service = {
   featured: boolean
 }
 
+
+const url="https://prismtech-1.onrender.com";
 export default function Home() {
   const [headline, setHeadline] = useState<string>('')
   const [tagline, setTagline] = useState<string>('')
@@ -37,7 +39,7 @@ export default function Home() {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch('/api/settings')
+        const res = await fetch(`${url}/api/settings`)
         if (!res.ok) return
         const s = await res.json()
         if (s?.home?.headline) setHeadline(s.home.headline)
@@ -50,7 +52,7 @@ export default function Home() {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch('/api/projects/featured')
+        const res = await fetch(`${url}/api/projects/featured`)
         if (!res.ok) return
         const projects = await res.json()
         setFeaturedProjects(projects.slice(0, 3)) // Show only first 3
@@ -61,7 +63,7 @@ export default function Home() {
   useEffect(() => {
     (async () => {
       try {
-        const res = await fetch('/api/services/featured')
+        const res = await fetch(`${url}/api/services/featured`)
         if (!res.ok) return
         const services = await res.json()
         setFeaturedServices(services.slice(0, 3)) // Show only first 3
